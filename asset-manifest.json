@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ethereum-funding/static/css/main.64f8484d.chunk.css",
+    "main.js": "/ethereum-funding/static/js/main.22a51a16.chunk.js",
+    "main.js.map": "/ethereum-funding/static/js/main.22a51a16.chunk.js.map",
+    "runtime~main.js": "/ethereum-funding/static/js/runtime~main.2b4d4102.js",
+    "runtime~main.js.map": "/ethereum-funding/static/js/runtime~main.2b4d4102.js.map",
+    "static/js/2.66c1e6e8.chunk.js": "/ethereum-funding/static/js/2.66c1e6e8.chunk.js",
+    "static/js/2.66c1e6e8.chunk.js.map": "/ethereum-funding/static/js/2.66c1e6e8.chunk.js.map",
+    "index.html": "/ethereum-funding/index.html",
+    "precache-manifest.0b135d98c1e11519e6c8206c3c5ddeb2.js": "/ethereum-funding/precache-manifest.0b135d98c1e11519e6c8206c3c5ddeb2.js",
+    "service-worker.js": "/ethereum-funding/service-worker.js",
+    "static/css/main.64f8484d.chunk.css.map": "/ethereum-funding/static/css/main.64f8484d.chunk.css.map"
+  }
+}
