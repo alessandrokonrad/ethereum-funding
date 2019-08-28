@@ -1,0 +1,15 @@
+.Input {
+  border-radius: 25px;
+  border-style: solid;
+  border-color: rgba(176, 190, 197, 1);
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  outline: none;
+  caret-color: rgba(124, 179, 66, 1);
+  transition: 0.2s;
+}
+
+.Input:focus {
+  border-color: rgba(77, 182, 172, 1);
+}
