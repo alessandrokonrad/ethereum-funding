@@ -1,3 +1,6 @@
+Check smart contract for this example:
+https://ropsten.etherscan.io/address/0x218a7f73492434039e0b17fd0927a7b8c0875f3c
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
