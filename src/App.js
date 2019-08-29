@@ -14,6 +14,8 @@ class App extends React.Component {
       currentAmount: 0,
       totalAmount: 1
     };
+    this.smartContractUrl =
+      "https://ropsten.etherscan.io/address/0x218a7f73492434039e0b17fd0927a7b8c0875f3c";
   }
 
   render() {
@@ -68,6 +70,15 @@ class App extends React.Component {
               </UniqeButton>
             </div>
           </div>
+          <h5>
+            <a
+              href={this.smartContractUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              View smart contract
+            </a>
+          </h5>
         </div>
       </div>
     );
