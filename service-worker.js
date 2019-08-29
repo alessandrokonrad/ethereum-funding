@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ethereum-funding/precache-manifest.0b135d98c1e11519e6c8206c3c5ddeb2.js"
+  "/ethereum-funding/precache-manifest.94940e90a6d404cdb6a4681ccdb49484.js"
 );
 
 self.addEventListener('message', (event) => {
