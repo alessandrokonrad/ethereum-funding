@@ -30,12 +30,13 @@ contract Funding {
     }
 
 
-    function getFunds() public {
+    function widthdrawFunds() public {
         require(
             msg.sender == owner,
             "your are not an owner!"
             );
-        selfdestruct(0xeC8E34F1e3839312567Ed9a0B3528424F1d0824F);
+        owner.transfer(address(this).balance);
+  }
     }
 
 }

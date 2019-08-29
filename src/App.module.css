@@ -9,6 +9,8 @@
 
 .card {
   text-align: center;
+  min-width: 350px;
+  min-height: 300px;
   border-radius: 20px;
   background-color: #fafafa;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
