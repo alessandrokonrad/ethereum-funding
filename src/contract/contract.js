@@ -3,15 +3,13 @@ import Web3 from "web3";
 
 var web3;
 var contract;
+const contractAddress = "0x218a7f73492434039e0b17fd0927a7b8c0875f3c";
 
 const checkCompatible = async () => {
   // Modern dapp browsers...
   if (window.ethereum || window.web3) {
     web3 = new Web3(window.web3.currentProvider);
-    contract = new web3.eth.Contract(
-      abi,
-      "0x218a7f73492434039e0b17fd0927a7b8c0875f3c"
-    );
+    contract = new web3.eth.Contract(abi, contractAddress);
     try {
       // Request account access if needed
       await window.ethereum.enable();
@@ -67,14 +65,14 @@ const changeTotal = amount => {
     .then(() => console.log("Successfully changed total amount!"));
 };
 
-const selfDestruct = () => {
+const widthdrawFunds = () => {
   contract.methods
-    .getFunds()
+    .withdrawFunds()
     .send({
       from: window.ethereum.selectedAddress,
       gas: 3000000
     })
-    .then(() => console.log("Successfully destructed contract!"));
+    .then(() => console.log("Successfull widthdrawal!"));
 };
 
 const fundContract = {
@@ -82,7 +80,7 @@ const fundContract = {
   fund,
   current,
   changeTotal,
-  selfDestruct,
+  widthdrawFunds,
   checkCompatible
 };
 
