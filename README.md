@@ -3,7 +3,7 @@
 ![demo](https://user-images.githubusercontent.com/35738310/64013051-47c49100-cb1f-11e9-8877-c09a944261b5.PNG)
 
 <h3><a href="https://alessandrokonrad.github.io/ethereum-funding/">Demo</a></h3>
-(make sure Metamask is installed, otherwise you can't interact with the dapp)
+<p>(make sure Metamask is installed, otherwise you can't interact with the dapp)</p>
 Check smart contract for this example:
 https://ropsten.etherscan.io/address/0x218a7f73492434039e0b17fd0927a7b8c0875f3c
 
