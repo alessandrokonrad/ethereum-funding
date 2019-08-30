@@ -24,7 +24,7 @@ class App extends React.Component {
       return (
         <div className={styles.bg}>
           <div className={styles.card} style={{ width: "50%", height: "50%" }}>
-            <h1>Crowd funding</h1>
+            <h1>Crowdfunding</h1>
             <div className={styles.container}>
               <div style={{ width: "60%", flex: 3, marginLeft: "20px" }}>
                 <h3>
