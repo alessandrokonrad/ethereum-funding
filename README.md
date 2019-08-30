@@ -2,7 +2,7 @@
 
 ![demo](https://user-images.githubusercontent.com/35738310/64013051-47c49100-cb1f-11e9-8877-c09a944261b5.PNG)
 
-<h3><a href="https://alessandrokonrad.github.io/ethereum-funding/" target="_blank">Demo</a></h3>
+<h3><a href="https://alessandrokonrad.github.io/ethereum-funding/">Demo</a></h3>
 <p>(make sure Metamask is installed, otherwise you can't interact with the dapp)</p>
 Check smart contract for this example:
 https://ropsten.etherscan.io/address/0x218a7f73492434039e0b17fd0927a7b8c0875f3c
@@ -18,7 +18,7 @@ https://ropsten.etherscan.io/address/0x218a7f73492434039e0b17fd0927a7b8c0875f3c
 ### Create smart contract
 under src/contract/ you can find the contract.sol file. This is the contract I use for this example.
 To use your own contract follow these steps:
-1. go to the <a target="_blank" href="https://remix.ethereum.org/">Remix IDE</a>
+1. go to the <a href="https://remix.ethereum.org/">Remix IDE</a>
 2. paste in the contract.sol file
 3. deploy the contract on the network you want (e.g. mainnet or ropsten)
 4. copy the abi and the contract address
