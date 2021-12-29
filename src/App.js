@@ -10,13 +10,12 @@ class App extends React.Component {
     this.state = {
       ratio: 0,
       amount: "",
-      name: "",
       currentAmount: 0,
-      totalAmount: 1,
-      compatible: true
+      totalAmount: 1000,
+      compatible: true,
     };
     this.smartContractUrl =
-      "https://ropsten.etherscan.io/address/0x218a7f73492434039e0b17fd0927a7b8c0875f3c";
+      "http://use-util.cloud.milkomeda.com:4000/address/0x7ae28c580DccA503c7412CE94e844db6f75BE585/transactions";
   }
 
   render() {
@@ -24,12 +23,13 @@ class App extends React.Component {
       return (
         <div className={styles.bg}>
           <div className={styles.card} style={{ width: "50%", height: "50%" }}>
-            <h1>Crowdfunding</h1>
+            <h1>Crowdfunding </h1>
+            <h3 style={{ marginTop: -8 }}>Milkomeda</h3>
             <div className={styles.container}>
               <div style={{ width: "60%", flex: 3, marginLeft: "20px" }}>
                 <h3>
-                  {this.state.currentAmount.toLocaleString("de-DE")} ETH raised
-                  of {this.state.totalAmount.toLocaleString("de-DE")} ETH
+                  {this.state.currentAmount.toLocaleString()} ADA raised of{" "}
+                  {this.state.totalAmount.toLocaleString()} ADA
                 </h3>
                 <div className={styles.back}>
                   <div
@@ -41,21 +41,11 @@ class App extends React.Component {
               <div style={{ flex: 1 }}></div>
               <div style={{ marginTop: "40px", flex: 2 }}>
                 <UniqeInput
-                  onChange={event =>
+                  onChange={(event) =>
                     this.setState({ amount: event.target.value })
                   }
                   value={this.state.amount}
-                  placeholder="Amount"
-                  height="30px"
-                  width="150px"
-                />
-                <div style={{ marginTop: "15px" }}></div>
-                <UniqeInput
-                  onChange={event =>
-                    this.setState({ name: event.target.value })
-                  }
-                  value={this.state.name}
-                  placeholder="Name (optional)"
+                  placeholder="Ada amount"
                   height="30px"
                   width="150px"
                 />
@@ -95,17 +85,21 @@ class App extends React.Component {
     console.log(total);
     this.setState({
       ratio: (current / total) * 100,
-      currentAmount: current,
-      totalAmount: total
+      currentAmount: parseFloat(current),
+      totalAmount: parseFloat(total),
     });
     console.log(this.state.ratio);
   }
 
   componentDidMount() {
     //check browser compatibility
-    Contract.checkCompatible().then(res => {
-      if (res) this.getAmount();
-      else this.setState({ compatible: false });
+    Contract.checkCompatible().then((res) => {
+      if (res) {
+        this.getAmount();
+        setInterval(() => {
+          this.getAmount();
+        }, 2000);
+      } else this.setState({ compatible: false });
     });
   }
 }
@@ -116,7 +110,7 @@ const NotCompatible = () => {
       className={styles.bg}
       style={{
         flexDirection: "column",
-        textAlign: "center"
+        textAlign: "center",
       }}
     >
       <h1>Your browser is not Dapps compatible</h1>

@@ -1,9 +1,9 @@
-import abi from "./abi";
+import { abi } from "./abi";
 import Web3 from "web3";
 
 var web3;
 var contract;
-const contractAddress = "0x218a7f73492434039e0b17fd0927a7b8c0875f3c";
+const contractAddress = "0x7ae28c580DccA503c7412CE94e844db6f75BE585";
 
 const checkCompatible = async () => {
   // Modern dapp browsers...
@@ -42,25 +42,25 @@ const current = async () => {
   return web3.utils.fromWei(result, "ether");
 };
 
-const fund = amount => {
+const fund = (amount) => {
   let amountWei = web3.utils.toWei(amount.toString(), "ether");
   contract.methods
-    .fund(amountWei)
+    .fund()
     .send({
       from: window.ethereum.selectedAddress,
       value: amountWei,
-      gas: 3000000
+      gas: 3000000,
     })
     .then(() => console.log("Successfully funded!"));
 };
 
-const changeTotal = amount => {
+const changeTotal = (amount) => {
   let amountWei = web3.utils.toWei(amount.toString(), "ether");
   contract.methods
     .changeTotalAmount(amountWei)
     .send({
       from: window.ethereum.selectedAddress,
-      gas: 3000000
+      gas: 3000000,
     })
     .then(() => console.log("Successfully changed total amount!"));
 };
@@ -70,7 +70,7 @@ const widthdrawFunds = () => {
     .withdrawFunds()
     .send({
       from: window.ethereum.selectedAddress,
-      gas: 3000000
+      gas: 3000000,
     })
     .then(() => console.log("Successfull widthdrawal!"));
 };
@@ -81,7 +81,7 @@ const fundContract = {
   current,
   changeTotal,
   widthdrawFunds,
-  checkCompatible
+  checkCompatible,
 };
 
 export default fundContract;

@@ -1,24 +1,22 @@
-pragma solidity ^0.5.1;
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.7.0 <0.9.0;
 
 
 contract Funding {
 
     uint public totalAmount;
     uint public currentAmount;
-    address owner;
+    address payable owner;
 
-    constructor() public {
-        totalAmount = 15 ether;
+    constructor() {
+        totalAmount = 1000 ether;
         currentAmount = 0 ether;
-        owner = 0xeC8E34F1e3839312567Ed9a0B3528424F1d0824F;
+        owner = payable(msg.sender);
     }
 
-    function fund(uint amount) public payable {
-        require(
-            amount == msg.value,
-            "expected amount doesn't equal transacted amount!"
-            );
-        currentAmount += amount;
+    function fund() public payable {
+        require(msg.value >= 0.1 ether, "Must be greater than 0.1 ADA");
+        currentAmount += msg.value;
     }
 
     function changeTotalAmount(uint amount) public {
@@ -33,10 +31,11 @@ contract Funding {
     function widthdrawFunds() public {
         require(
             msg.sender == owner,
-            "your are not an owner!"
+            "You are not the owner!"
             );
+        require(
+            currentAmount >= totalAmount, "Target amount not reached yet"
+        );
         owner.transfer(address(this).balance);
   }
-    }
-
 }

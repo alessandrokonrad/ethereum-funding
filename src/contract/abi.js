@@ -1,75 +1,60 @@
-var abi = [
+export const abi = [
   {
-    constant: false,
+    inputs: [],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
     inputs: [
       {
+        internalType: "uint256",
         name: "amount",
-        type: "uint256"
-      }
+        type: "uint256",
+      },
     ],
     name: "changeTotalAmount",
     outputs: [],
-    payable: false,
     stateMutability: "nonpayable",
-    type: "function"
+    type: "function",
   },
   {
-    constant: false,
-    inputs: [
-      {
-        name: "amount",
-        type: "uint256"
-      }
-    ],
-    name: "fund",
-    outputs: [],
-    payable: true,
-    stateMutability: "payable",
-    type: "function"
-  },
-  {
-    constant: false,
-    inputs: [],
-    name: "getFunds",
-    outputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function"
-  },
-  {
-    inputs: [],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "constructor"
-  },
-  {
-    constant: true,
     inputs: [],
     name: "currentAmount",
     outputs: [
       {
+        internalType: "uint256",
         name: "",
-        type: "uint256"
-      }
+        type: "uint256",
+      },
     ],
-    payable: false,
     stateMutability: "view",
-    type: "function"
+    type: "function",
   },
   {
-    constant: true,
+    inputs: [],
+    name: "fund",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
     inputs: [],
     name: "totalAmount",
     outputs: [
       {
+        internalType: "uint256",
         name: "",
-        type: "uint256"
-      }
+        type: "uint256",
+      },
     ],
-    payable: false,
     stateMutability: "view",
-    type: "function"
-  }
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "widthdrawFunds",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
 ];
-
-export default abi;
